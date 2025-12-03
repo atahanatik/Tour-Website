@@ -1,0 +1,102 @@
+export type ExperienceType = {
+  slug: string;
+  title: string;
+  tagline: string;
+  duration: string;
+  priceFrom: string;
+  ratingText: string;
+  city: string;
+  type: string;
+  whatWeDo: string[];
+  includes: string[];
+  notIncluded: string[];
+  schedule: string[];
+  faq: { question: string; answer: string }[];
+};
+
+export const experiences: ExperienceType[] = [
+  {
+    slug: "rome-night-stories-walk",
+    title: "Rome Night Stories Walk",
+    tagline:
+      "A small-group evening walk through Rome’s alleys, secrets and legends.",
+    duration: "2.5 hours",
+    priceFrom: "€35",
+    ratingText: "⭐ 4.97 · 230+ reviews (Airbnb)",
+    city: "Rome",
+    type: "History & Night",
+    whatWeDo: [
+      "Meet near Piazza Navona just before sunset.",
+      "Walk through hidden alleys, small piazzas and viewpoints.",
+      "Stories about emperors, popes, artists and scandals.",
+      "End near Trevi Fountain with final tips for bars & food."
+    ],
+    includes: [
+      "Guided walk with a local host",
+      "Small group (max 10 guests)",
+      "Recommendations for the rest of your stay"
+    ],
+    notIncluded: ["Food & drinks", "Hotel pickup", "Entrance tickets"],
+    schedule: [
+      "18:30 – Meet & introductions",
+      "18:45 – Walk through Campo de' Fiori & alleys",
+      "19:30 – Hidden courtyard / viewpoint",
+      "20:15 – Trevi & goodbye tips"
+    ],
+    faq: [
+      {
+        question: "Is this tour suitable for kids?",
+        answer:
+          "Yes, but some stories are more fun for teens and adults. The route is easy and flat."
+      },
+      {
+        question: "What if it rains?",
+        answer:
+          "We still run the tour in light rain. In heavy weather we’ll contact you with options."
+      }
+    ]
+  },
+  {
+    slug: "civitavecchia-rome-in-a-day",
+    title: "Civitavecchia → Rome in a Day (Cruise Shore Tour)",
+    tagline:
+      "Perfectly timed shore day from Civitavecchia with all the Roman highlights.",
+    duration: "8–9 hours",
+    priceFrom: "€120",
+    ratingText: "⭐ 4.9 · Popular with cruise guests",
+    city: "Civitavecchia / Rome",
+    type: "Cruise Shore",
+    whatWeDo: [
+      "Pick up from Civitavecchia port (pre-arranged meeting).",
+      "Transfer to Rome with commentary on the way.",
+      "Highlights: Colosseum area (outside), Trevi Fountain, Pantheon, Piazza Navona.",
+      "Optional lunch stop and free time.",
+      "Drive back to port in time for all-aboard."
+    ],
+    includes: [
+      "Private driver or minivan (depending on group size)",
+      "Host / guide in Rome",
+      "Flexible timing according to ship schedule"
+    ],
+    notIncluded: ["Entrance tickets", "Meals", "Gratuities"],
+    schedule: [
+      "08:00 – Meet at Civitavecchia port",
+      "09:30 – Arrive Rome, first photo stop",
+      "12:30 – Lunch break",
+      "15:00 – Last highlight + souvenir stop",
+      "16:30 – Back at port (time flexible by ship)"
+    ],
+    faq: [
+      {
+        question: "What if the ship changes schedule?",
+        answer:
+          "We monitor changes and adapt pickup and drop-off times when possible."
+      },
+      {
+        question: "Is this a private tour?",
+        answer:
+          "We can run it as private or small shared group – details can be customized."
+      }
+    ]
+  }
+];
