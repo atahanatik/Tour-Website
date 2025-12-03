@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Section from "@/components/Section";
-import ExperienceCard from "@/components/ExperienceCard";
-import { experiences } from "@/data/experiences";
+import Section from "../components/Section";
+import ExperienceCard from "../components/ExperienceCard";
+import { experiences } from "../data/experiences";
 
 export default function HomePage() {
   const featured = experiences.slice(0, 3);
