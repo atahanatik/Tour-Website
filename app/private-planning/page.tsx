@@ -156,4 +156,61 @@ export default function PrivatePlanningPage() {
             <div>
               <label className="block mb-1">How did you find us?</label>
               <select
-                className="w
+                className="w-full border rounded-lg px-3 py-2 text-xs bg-white"
+                name="source"
+              >
+                <option>Airbnb Experiences</option>
+                <option>Instagram</option>
+                <option>Friend recommendation</option>
+                <option>Cruise / ship forum</option>
+                <option>Search engine</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              className="w-full rounded-full bg-slate-900 text-white font-medium py-2 text-xs hover:bg-slate-800"
+            >
+              Send trip idea (demo)
+            </button>
+            <p className="text-[10px] text-slate-500 mt-1">
+              This form is not yet connected to email – it&apos;s here to show
+              the structure and fields.
+            </p>
+          </form>
+        </div>
+      </Section>
+    </>
+  );
+}
+
+function Card({ title, text }: { title: string; text: string }) {
+  return (
+    <div className="bg-white border rounded-2xl p-4 shadow-sm">
+      <h2 className="font-semibold mb-1 text-sm">{title}</h2>
+      <p className="text-xs text-slate-700">{text}</p>
+    </div>
+  );
+}
+
+interface PackageCardProps {
+  name: string;
+  description: string;
+  points: string[];
+  from: string;
+}
+
+function PackageCard({ name, description, points, from }: PackageCardProps) {
+  return (
+    <div className="bg-white border rounded-2xl p-5 shadow-sm flex flex-col">
+      <h2 className="font-semibold text-base mb-1">{name}</h2>
+      <p className="text-xs text-slate-500 mb-3">{description}</p>
+      <ul className="text-xs text-slate-700 space-y-1 mb-3">
+        {points.map((p) => (
+          <li key={p}>• {p}</li>
+        ))}
+      </ul>
+      <p className="text-xs font-semibold text-slate-900 mt-auto">{from}</p>
+    </div>
+  );
+}
