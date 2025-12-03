@@ -1,0 +1,160 @@
+import Section from "@/components/Section";
+import Link from "next/link";
+
+export default function AirbnbRankingsPage() {
+  return (
+    <>
+      <section className="bg-slate-900 text-white">
+        <div className="container py-12 md:py-16">
+          <h1 className="text-2xl md:text-4xl font-semibold mb-2">
+            Airbnb Experience Rankings
+          </h1>
+          <p className="text-sm text-slate-200 max-w-2xl">
+            Before offering direct bookings, we built our tours and hosting
+            style with Airbnb Experiences guests – and kept their feedback as
+            our main compass.
+          </p>
+        </div>
+      </section>
+
+      <Section
+        title="Highlights at a glance"
+        subtitle="These numbers are placeholders – replace them with your real stats when you&apos;re ready."
+      >
+        <div className="grid gap-4 md:grid-cols-3 text-sm text-slate-700">
+          <StatCard
+            label="Average rating"
+            value="⭐ 4.9+"
+            note="Across all active Airbnb Experiences."
+          />
+          <StatCard
+            label="Total reviews"
+            value="200+"
+            note="From guests coming mostly from Europe and North America."
+          />
+          <StatCard
+            label="Guest nationalities"
+            value="30+"
+            note="Couples, families and small groups from many countries."
+          />
+        </div>
+      </Section>
+
+      <Section
+        title="What guests usually mention"
+        subtitle="Common themes we hear again and again in reviews."
+      >
+        <div className="grid gap-4 md:grid-cols-3 text-xs text-slate-700">
+          <ReviewTheme
+            title="Storytelling"
+            text="Guests like that the history is clear, human and not just dates and names."
+          />
+          <ReviewTheme
+            title="Small group feeling"
+            text="Many reviews mention it felt more like walking with a friend than being in a big group."
+          />
+          <ReviewTheme
+            title="Flexibility"
+            text="We adjust pace, order of stops and side streets depending on the group."
+          />
+          <ReviewTheme
+            title="Local tips"
+            text="People appreciate restaurant and neighborhood suggestions that match their budget and style."
+          />
+          <ReviewTheme
+            title="Calm atmosphere"
+            text="No rushing from sight to sight – enough time for photos and breaks."
+          />
+          <ReviewTheme
+            title="Clear communication"
+            text="Meeting points and instructions are made simple, which matters a lot on cruise days."
+          />
+        </div>
+      </Section>
+
+      <Section
+        title="Sample review cards"
+        subtitle="Replace these with screenshots or real quotes once you connect your listing."
+      >
+        <div className="grid gap-4 md:grid-cols-3 text-xs text-slate-700">
+          <ReviewCard
+            name="Emily, USA"
+            quote="One of the best nights of our trip. We saw famous places but also little streets we would never have found alone."
+          />
+          <ReviewCard
+            name="Marko, Croatia"
+            quote="Perfect shore day from the cruise. Timing was relaxed but we still saw so much. We were back at the ship with time to spare."
+          />
+          <ReviewCard
+            name="Sara, UK"
+            quote="Felt super safe and taken care of. Great tips for the rest of our stay and amazing food recommendations."
+          />
+        </div>
+      </Section>
+
+      <Section
+        title="Book on Airbnb or directly"
+        subtitle="Same guide, same style – you just choose the channel that feels best."
+      >
+        <div className="bg-white border rounded-2xl shadow-sm p-5 text-xs text-slate-700 max-w-2xl">
+          <p className="mb-3">
+            You can still book certain dates as official Airbnb Experiences, or
+            contact us directly for more flexible times, custom versions and
+            cruise-specific days.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="https://www.airbnb.com"
+              target="_blank"
+              className="inline-flex rounded-full bg-slate-900 text-white px-4 py-2 text-xs font-medium hover:bg-slate-800"
+            >
+              See Airbnb listing (placeholder)
+            </Link>
+            <Link
+              href="/experiences"
+              className="inline-flex rounded-full border px-4 py-2 text-xs font-medium hover:bg-slate-50"
+            >
+              View direct experiences
+            </Link>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}
+
+function StatCard({
+  label,
+  value,
+  note
+}: {
+  label: string;
+  value: string;
+  note: string;
+}) {
+  return (
+    <div className="bg-white border rounded-2xl p-4 shadow-sm">
+      <p className="text-xs text-slate-500 mb-1">{label}</p>
+      <p className="text-xl font-semibold mb-1">{value}</p>
+      <p className="text-xs text-slate-600">{note}</p>
+    </div>
+  );
+}
+
+function ReviewTheme({ title, text }: { title: string; text: string }) {
+  return (
+    <div className="bg-white border rounded-2xl p-4 shadow-sm">
+      <h3 className="font-semibold mb-1">{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
+}
+
+function ReviewCard({ name, quote }: { name: string; quote: string }) {
+  return (
+    <div className="bg-white border rounded-2xl p-4 shadow-sm">
+      <p className="font-semibold mb-1">{name}</p>
+      <p className="italic text-slate-700">&ldquo;{quote}&rdquo;</p>
+    </div>
+  );
+}
