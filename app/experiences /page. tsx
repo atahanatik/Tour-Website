@@ -1,0 +1,43 @@
+import Section from "@/components/Section";
+import ExperienceCard from "@/components/ExperienceCard";
+import { experiences } from "@/data/experiences";
+
+export default function ExperiencesPage() {
+  return (
+    <Section
+      title="Experiences"
+      subtitle="Evening walks, cruise-friendly days and flexible small-group tours."
+    >
+      <div className="mb-6 flex flex-wrap gap-3 text-xs">
+        <select className="border rounded-full px-3 py-1.5 bg-white">
+          <option>All cities</option>
+          <option>Rome</option>
+          <option>Civitavecchia</option>
+        </select>
+        <select className="border rounded-full px-3 py-1.5 bg-white">
+          <option>All types</option>
+          <option>History & Night</option>
+          <option>Cruise Shore</option>
+        </select>
+        <select className="border rounded-full px-3 py-1.5 bg-white">
+          <option>Any duration</option>
+          <option>Up to 3 hours</option>
+          <option>Half day</option>
+          <option>Full day</option>
+        </select>
+        <select className="border rounded-full px-3 py-1.5 bg-white">
+          <option>Any price</option>
+          <option>Budget</option>
+          <option>Mid-range</option>
+          <option>Premium</option>
+        </select>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-3">
+        {experiences.map((exp) => (
+          <ExperienceCard key={exp.slug} {...exp} />
+        ))}
+      </div>
+    </Section>
+  );
+}
