@@ -1,0 +1,171 @@
+import Section from "@/components/Section";
+
+export default function TourPlanningHubPage() {
+  return (
+    <>
+      <section className="bg-slate-900 text-white">
+        <div className="container py-12 md:py-16">
+          <h1 className="text-2xl md:text-4xl font-semibold mb-2">
+            Tour Planning Hub
+          </h1>
+          <p className="text-sm text-slate-200 max-w-2xl">
+            Free sample itineraries and planning tips for Rome and common cruise
+            stopovers. Use them as they are, or as a starting point for a
+            custom plan.
+          </p>
+        </div>
+      </section>
+
+      <Section
+        title="Quick itinerary ideas"
+        subtitle="Simple day-by-day skeletons you can adapt to your own style."
+      >
+        <div className="grid gap-4 md:grid-cols-2 text-sm text-slate-700">
+          <ItineraryCard
+            title="Rome in 1 day – first timer"
+            bullets={[
+              "Morning: Colosseum area from outside, then walk via the Forum viewpoint.",
+              "Late morning: Pantheon and nearby coffee stop.",
+              "Afternoon: Piazza Navona, Castel Sant'Angelo views.",
+              "Evening: Trastevere dinner and night walk."
+            ]}
+          />
+          <ItineraryCard
+            title="Rome in 2 days – relaxed"
+            bullets={[
+              "Day 1: Historic center highlights (Pantheon, Trevi, Navona, Spanish Steps).",
+              "Day 2: Vatican area or Appian Way, depending on interest and season.",
+              "Both days: clear lunch / gelato pauses and golden-hour viewpoints."
+            ]}
+          />
+          <ItineraryCard
+            title="Rome in 3 days – deeper"
+            bullets={[
+              "Day 1: Classic center.",
+              "Day 2: Vatican Museums & St Peter's or alternative churches & art.",
+              "Day 3: Local neighborhoods (Testaccio, Trastevere, Ostiense) for food and street life."
+            ]}
+          />
+          <ItineraryCard
+            title="Civitavecchia cruise day – sample"
+            bullets={[
+              "08:00–09:30 transfer to Rome.",
+              "Morning around Colosseum area and a viewpoint over the Forum.",
+              "Lunch in the historic center.",
+              "Afternoon walk via Trevi, Pantheon, Piazza Navona.",
+              "Return with buffer time for all-aboard."
+            ]}
+          />
+        </div>
+      </Section>
+
+      <Section
+        title="Planning tips"
+        subtitle="A few simple rules make Rome and cruise days much easier."
+      >
+        <div className="grid gap-4 md:grid-cols-3 text-xs text-slate-700">
+          <TipCard
+            title="Work with time windows"
+            text="Think in blocks of 2–3 hours rather than long lists. Morning block, afternoon block and evening block per day."
+          />
+          <TipCard
+            title="Heat & crowds"
+            text="In hot months, do outdoor and crowded sights early or late, and keep a slow middle of the day."
+          />
+          <TipCard
+            title="Cruise buffer"
+            text="Always leave at least 60–90 minutes buffer for getting back to the ship, especially from cities like Rome or Pompeii."
+          />
+          <TipCard
+            title="Tickets and lines"
+            text="Decide early which paid sights really matter. Pre-book only those to avoid turning the trip into a schedule prison."
+          />
+          <TipCard
+            title="Food rhythm"
+            text="Plan around when people are actually hungry and tired, not just around landmarks. A happy group listens more."
+          />
+          <TipCard
+            title="Rain plan"
+            text="Always have a bad-weather version of your day with more indoor stops and covered walks."
+          />
+        </div>
+      </Section>
+
+      <Section
+        title="Need help refining a plan?"
+        subtitle="If you already have a draft itinerary, we can look at it and make it realistic."
+      >
+        <div className="max-w-xl bg-white border rounded-2xl shadow-sm p-5 text-xs text-slate-700">
+          <p className="mb-3">
+            Use this if you&apos;ve already booked flights and hotels and want
+            a second pair of eyes on your schedule.
+          </p>
+          <form className="space-y-3">
+            <div>
+              <label className="block mb-1">Name</label>
+              <input
+                className="w-full border rounded-lg px-3 py-2 text-xs"
+                name="name"
+              />
+            </div>
+            <div>
+              <label className="block mb-1">Email</label>
+              <input
+                type="email"
+                className="w-full border rounded-lg px-3 py-2 text-xs"
+                name="email"
+              />
+            </div>
+            <div>
+              <label className="block mb-1">Short description of your plan</label>
+              <textarea
+                name="plan"
+                rows={4}
+                className="w-full border rounded-lg px-3 py-2 text-xs"
+                placeholder="Paste a rough day-by-day outline or describe your idea."
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full rounded-full bg-slate-900 text-white font-medium py-2 text-xs hover:bg-slate-800"
+            >
+              Ask for feedback (demo)
+            </button>
+            <p className="text-[10px] text-slate-500 mt-1">
+              This is a non-functional demo form – later you can connect it to
+              email or a CRM.
+            </p>
+          </form>
+        </div>
+      </Section>
+    </>
+  );
+}
+
+function ItineraryCard({
+  title,
+  bullets
+}: {
+  title: string;
+  bullets: string[];
+}) {
+  return (
+    <div className="bg-white border rounded-2xl p-4 shadow-sm">
+      <h2 className="font-semibold text-sm mb-2">{title}</h2>
+      <ul className="list-disc list-inside text-xs text-slate-700 space-y-1">
+        {bullets.map((b) => (
+          <li key={b}>{b}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function TipCard({ title, text }: { title: string; text: string }) {
+  return (
+    <div className="bg-white border rounded-2xl p-4 shadow-sm">
+      <h3 className="font-semibold mb-1">{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
+}
