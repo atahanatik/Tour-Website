@@ -1,0 +1,63 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/experiences", label: "Experiences" },
+  { href: "/cruise-tours", label: "Cruise Tours" },
+  { href: "/private-planning", label: "Private Planning" },
+  { href: "/tour-planning", label: "Tour Planning Hub" },
+  { href: "/airbnb-rankings", label: "Airbnb Rankings" },
+  { href: "/about", label: "About & Contact" }
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="border-b bg-white/80 backdrop-blur">
+      <nav className="container flex items-center justify-between py-4">
+        <Link href="/" className="font-semibold text-lg tracking-tight">
+          Atrea Tours
+        </Link>
+
+        <button
+          className="md:hidden p-2 rounded border"
+          onClick={() => setOpen((o) => !o)}
+        >
+          ☰
+        </button>
+
+        <ul className="hidden md:flex gap-6 text-sm">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className="hover:text-blue-700">
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {open && (
+        <div className="md:hidden border-t bg-white">
+          <ul className="container py-2 flex flex-col gap-2 text-sm">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="block py-1"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </header>
+  );
+}
