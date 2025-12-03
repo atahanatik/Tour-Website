@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
-import { experiences } from "@/data/experiences";
-import Section from "@/components/Section";
-
+import { experiences } from "../../../data/experiences";
+import Section from "../../../components/Section";
 interface Props {
   params: { slug: string };
 }
