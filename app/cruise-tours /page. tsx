@@ -1,0 +1,182 @@
+import Section from "@/components/Section";
+import Link from "next/link";
+
+export default function CruiseToursPage() {
+  return (
+    <>
+      <section className="bg-slate-900 text-white">
+        <div className="container py-12 md:py-16">
+          <h1 className="text-2xl md:text-4xl font-semibold mb-2">
+            Cruise Shore Tours
+          </h1>
+          <p className="text-sm text-slate-200 max-w-2xl">
+            Shore days planned around your ship&apos;s schedule – small groups,
+            flexible timing and clear communication so you are back on board
+            relaxed and on time.
+          </p>
+        </div>
+      </section>
+
+      <Section
+        title="Tours by Port"
+        subtitle="Examples of shore days we can run or customize for your group."
+      >
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="bg-white border rounded-2xl p-5 shadow-sm">
+            <h2 className="font-semibold mb-1 text-lg">
+              Civitavecchia → Rome in a Day
+            </h2>
+            <p className="text-xs text-slate-500 mb-2">
+              Full-day highlight tour for first-time visitors.
+            </p>
+            <p className="text-xs text-slate-600 mb-1">
+              ⏱ 8–9 hours · fits typical port stop
+            </p>
+            <p className="text-xs text-slate-600 mb-3">
+              From €120 per person or custom group quote.
+            </p>
+            <p className="text-xs text-slate-700 mb-3">
+              Transfer from Civitavecchia, photo stops by the Colosseum area,
+              Trevi Fountain, Pantheon and Piazza Navona with time for lunch
+              and souvenirs.
+            </p>
+            <Link
+              href="/experiences/civitavecchia-rome-in-a-day"
+              className="inline-flex text-xs font-medium rounded-full border px-3 py-1.5 hover:bg-slate-50"
+            >
+              View example itinerary
+            </Link>
+          </div>
+
+          <div className="bg-white border rounded-2xl p-5 shadow-sm">
+            <h2 className="font-semibold mb-1 text-lg">
+              Naples Port: Pompeii & Amalfi Coast
+            </h2>
+            <p className="text-xs text-slate-500 mb-2">
+              Classic combination of ruins and coastal views.
+            </p>
+            <p className="text-xs text-slate-600 mb-1">
+              ⏱ 8–9 hours · depending on traffic
+            </p>
+            <p className="text-xs text-slate-600 mb-3">
+              From €140 per person or custom group quote.
+            </p>
+            <p className="text-xs text-slate-700 mb-3">
+              Private driver for the day, guided visit of Pompeii with free
+              time, then scenic drive along the Amalfi Coast with a stop in
+              Positano or Amalfi town.
+            </p>
+            <p className="text-[11px] text-slate-500">
+              This is a sample product – details will be adjusted to real
+              partners and availability.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        title="How it works"
+        subtitle="Simple steps from sending your ship name to stepping back on board."
+      >
+        <div className="grid gap-4 md:grid-cols-4 text-sm text-slate-700">
+          <div className="bg-white rounded-2xl border p-4 shadow-sm">
+            <p className="text-xs font-semibold mb-1">1. Tell us your ship</p>
+            <p className="text-xs">
+              Send us your ship name, date, port and number of people.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl border p-4 shadow-sm">
+            <p className="text-xs font-semibold mb-1">2. Get a proposal</p>
+            <p className="text-xs">
+              We reply with a draft plan, timing and price options.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl border p-4 shadow-sm">
+            <p className="text-xs font-semibold mb-1">3. Confirm & deposit</p>
+            <p className="text-xs">
+              Once you&apos;re happy, you confirm and pay a small deposit.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl border p-4 shadow-sm">
+            <p className="text-xs font-semibold mb-1">4. Relax on shore day</p>
+            <p className="text-xs">
+              We track the ship, meet you at the agreed point and bring you back
+              in time.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        title="Request a cruise shore plan"
+        subtitle="No obligation – tell us your basics and we&apos;ll reply with options."
+      >
+        <div className="max-w-xl bg-white rounded-2xl border shadow-sm p-5 text-xs text-slate-700">
+          <form className="space-y-3">
+            <div>
+              <label className="block mb-1">Name</label>
+              <input
+                name="name"
+                className="w-full border rounded-lg px-3 py-2 text-xs"
+                required
+              />
+            </div>
+            <div>
+              <label className="block mb-1">Email or WhatsApp</label>
+              <input
+                name="contact"
+                className="w-full border rounded-lg px-3 py-2 text-xs"
+                required
+              />
+            </div>
+            <div className="grid gap-3 md:grid-cols-2">
+              <div>
+                <label className="block mb-1">Ship name</label>
+                <input
+                  name="ship"
+                  className="w-full border rounded-lg px-3 py-2 text-xs"
+                />
+              </div>
+              <div>
+                <label className="block mb-1">Port</label>
+                <input
+                  name="port"
+                  className="w-full border rounded-lg px-3 py-2 text-xs"
+                />
+              </div>
+            </div>
+            <div className="grid gap-3 md:grid-cols-2">
+              <div>
+                <label className="block mb-1">Date</label>
+                <input
+                  type="date"
+                  name="date"
+                  className="w-full border rounded-lg px-3 py-2 text-xs"
+                />
+              </div>
+              <div>
+                <label className="block mb-1">Number of people</label>
+                <input
+                  type="number"
+                  name="people"
+                  min={1}
+                  className="w-full border rounded-lg px-3 py-2 text-xs"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="block mb-1">Message</label>
+              <textarea
+                name="message"
+                rows={3}
+                className="w-full border rounded-lg px-3 py-2 text-xs"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full rounded-full bg-slate-900 text-white font-medium py-2 text-xs hover:bg-slate-800"
+            >
+              Send request (demo)
+            </button>
+            <p className="text-[10px] text-slate-500 mt-1">
+              This form is a visual demo only – connect it
