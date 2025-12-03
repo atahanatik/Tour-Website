@@ -1,0 +1,39 @@
+import Link from "next/link";
+
+interface ExperienceCardProps {
+  slug: string;
+  title: string;
+  tagline: string;
+  duration: string;
+  priceFrom: string;
+  ratingText: string;
+}
+
+export default function ExperienceCard({
+  slug,
+  title,
+  tagline,
+  duration,
+  priceFrom,
+  ratingText
+}: ExperienceCardProps) {
+  return (
+    <article className="bg-white rounded-xl border shadow-sm overflow-hidden flex flex-col">
+      <div className="h-40 bg-slate-200" />
+      <div className="p-4 flex-1 flex flex-col">
+        <h3 className="font-semibold text-base mb-1">{title}</h3>
+        <p className="text-xs text-slate-500 mb-2 line-clamp-2">{tagline}</p>
+        <p className="text-xs text-slate-600 mb-1">
+          ⏱ {duration} · From {priceFrom}
+        </p>
+        <p className="text-xs text-amber-600 mb-3">{ratingText}</p>
+        <Link
+          href={`/experiences/${slug}`}
+          className="mt-auto inline-flex items-center justify-center text-xs font-medium rounded-lg border px-3 py-1.5 hover:bg-slate-50"
+        >
+          View details
+        </Link>
+      </div>
+    </article>
+  );
+}
